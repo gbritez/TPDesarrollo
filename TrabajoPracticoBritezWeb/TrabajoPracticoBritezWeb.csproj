@@ -88,6 +88,7 @@
     <Content Include="HomeAdmin.html" />
     <Content Include="HomeUser.html" />
     <Content Include="Login.html" />
+    <Content Include="Scripts\Actions\actions.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -162,7 +163,6 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Scripts\Actions\" />
     <Folder Include="Scripts\Home\" />
   </ItemGroup>
   <PropertyGroup>
