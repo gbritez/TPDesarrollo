@@ -20,7 +20,7 @@ namespace TrabajoPracticoBritezAPI.Controllers
         {
 
             var user = db.Usuarios.Find(model.User);
-            if(user!= null)
+            if(user!= null && user.password == model.Password)
             {
                 if(user.type == "admin")
                 {
