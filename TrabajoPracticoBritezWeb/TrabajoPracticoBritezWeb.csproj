@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Add.html" />
+    <Content Include="Content\actions.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -80,6 +81,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\home-admin.css" />
     <Content Include="Content\home-user.css" />
+    <Content Include="Content\Images\actions.jpg" />
     <Content Include="Content\Images\admin-home.jpg" />
     <Content Include="Content\Images\sky-login.jpg" />
     <Content Include="Content\Images\user-home.jpg" />

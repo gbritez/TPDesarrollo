@@ -58,7 +58,7 @@ function initDataTable(data) {
         buttons: [
             {
                 text: 'Edit',
-                className: 'btn',
+                className: 'btn btn-success',
                 action: function (e, dt, node, config) {
                     let data = dt.rows({ selected: true }).data()[0];
                     fillModal(data);
@@ -67,7 +67,7 @@ function initDataTable(data) {
             },
             {
                 text: 'Delete',
-                className: 'btn',
+                className: 'btn btn-danger',
                 action: function (e, dt, node, config) {
                     let id = dt.rows({ selected: true }).data()[0].Id;
                     deleteItem(id)
