@@ -38,14 +38,24 @@ namespace TrabajoPracticoBritezAPI.Controllers
         {
             productos newProduct = new productos();
 
-            newProduct.nombre = product.Nombre;
-            newProduct.marca = product.Marca;
-            newProduct.precio = product.Precio;
-            newProduct.descripcion = product.Descripcion;
+            try
+            {
+                newProduct.nombre = product.Nombre;
+                newProduct.marca = product.Marca;
+                newProduct.precio = product.Precio;
+                newProduct.descripcion = product.Descripcion;
 
-            db.productos.Add(newProduct);
-            db.SaveChanges();
-            return Ok("Exito");
+                db.productos.Add(newProduct);
+                db.SaveChanges();
+                return Ok("Exito al ingresar producto");
+            }
+            catch (Exception)
+            {
+
+                return BadRequest("Fallo al ingresar producto, completar campos");
+            }
+
+          
         }
 
         [HttpGet, Route("Products/Delete/{id}")]

@@ -28,29 +28,6 @@
     <script src="Scripts/umd/popper.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            $.ajax({
-                url: "https://localhost:44394/Products/Get",
-                dataType: 'json',
-                type: 'GET',
-                success: function (data) {
-                    $('#dataTable').DataTable({
-                        
-                        data: data,
-                        columns: [
-                            { data: "Id" },
-                            { data: "Nombre" },
-                            { data: "Marca" },
-                            { data: "Precio" },
-                            { data: "Descripcion" },
-                        ]
-                    });
-                }
-            })
-
-        });
-    </script>
+    <script src="Scripts/Watch/watch.js"></script>
 </body>
 </html>

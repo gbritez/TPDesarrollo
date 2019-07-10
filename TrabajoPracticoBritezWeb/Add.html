@@ -38,25 +38,12 @@
                 </div>
             </div>
         </form>
-        <div id="message" class="alert alert-success" style="display:none">Producto agregado con exito!</div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/umd/popper.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        function SubmitProduct() {
-            $.ajax({
-                type: 'POST',
-                url: 'https://localhost:44394/Products/Put',
-                dataType: 'json',
-                data: $('#productForm').serialize(),
-                success: function (data) {                  
-                    $('#message').show().delay(3000).fadeOut();
-                }
-            })
-        }
-    </script>
+    <script src="Scripts/Add/add.js"></script>
 </body>
 </html>

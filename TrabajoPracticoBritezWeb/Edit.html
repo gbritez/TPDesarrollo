@@ -34,30 +34,34 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="editForm">
                         <div class="form-group">
+                            <div class="col">
+                                <label for="Id">Id</label>
+                                <input type="text" id="Id" name="Id" class="form-control" readonly />
+                            </div>
                             <div class="col">
                                 <label for="Nombre">Nombre</label>
                                 <input type="text" id="Nombre" name="Nombre" class="form-control" required />
                             </div>
                             <div class="col">
                                 <label>Marca</label>
-                                <input type="text" name="Marca" class="form-control" required />
+                                <input type="text" name="Marca" id="Marca" class="form-control" required />
                             </div>
                             <div class="col">
                                 <label>Precio</label>
-                                <input type="number" name="Precio" class="form-control" placeholder="$" required />
+                                <input type="number" name="Precio" id="Precio" class="form-control" placeholder="$" required />
                             </div>
                             <div class="col">
                                 <label>Descripción</label>
-                                <textarea name="Descripcion" class="form-control"></textarea>
+                                <textarea name="Descripcion" id="Descripcion" class="form-control"></textarea>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" onclick="editItem()">Save changes</button>
                 </div>
             </div>
         </div>

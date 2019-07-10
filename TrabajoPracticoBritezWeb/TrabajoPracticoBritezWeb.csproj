@@ -79,6 +79,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\home-admin.css" />
+    <Content Include="Content\home-user.css" />
     <Content Include="Content\Images\admin-home.jpg" />
     <Content Include="Content\Images\sky-login.jpg" />
     <Content Include="Content\Images\user-home.jpg" />
@@ -89,6 +90,7 @@
     <Content Include="HomeUser.html" />
     <Content Include="Login.html" />
     <Content Include="Scripts\Actions\actions.js" />
+    <Content Include="Scripts\Add\add.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -131,6 +133,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\Watch\watch.js" />
     <Content Include="Watch.html" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -163,11 +166,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\Add\" />
-    <Folder Include="Scripts\Home\" />
-    <Folder Include="Scripts\Watch\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

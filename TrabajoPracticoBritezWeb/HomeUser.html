@@ -17,23 +17,18 @@
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card">
-                <div class="card-body" onclick="testfunction()">
-                    <button class="btn"> <i class="fa fa-plus" aria-hidden="true"></i></button>
+                <div class="card-body" >
+                    <button class="btn"> <i class="fa fa-plus" aria-hidden="true" onclick="goToAdd()"></i></button>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <button class="btn"> <i class="fa fa-edit" aria-hidden="true"></i></button>
+                    <button class="btn"> <i class="fa fa-eye" aria-hidden="true" onclick="goToWatch()"></i></button>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <button class="btn"> <i class="fa fa-eye" aria-hidden="true"></i></button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <button class="btn"> <i class="fa fa-sign-out" aria-hidden="true"></i> </button>
+                    <button class="btn"> <i class="fa fa-sign-out" aria-hidden="true" onclick="logOff()"></i> </button>
                 </div>
             </div>
         </div>
@@ -43,6 +38,7 @@
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/umd/popper.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/Actions/actions.js"></script>
 </body>
 
 </html>

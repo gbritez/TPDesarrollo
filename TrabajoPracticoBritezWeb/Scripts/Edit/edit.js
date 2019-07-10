@@ -21,6 +21,7 @@ function initDataTable(data) {
                 className: 'btn',
                 action: function (e, dt, node, config) {
                     let data = dt.rows({ selected: true }).data()[0];
+                    fillModal(data);
                     $('#exampleModal').modal('show');
                 }
             },
@@ -29,7 +30,6 @@ function initDataTable(data) {
                 className: 'btn',
                 action: function (e, dt, node, config) {
                     let id = dt.rows({ selected: true }).data()[0].Id;
-                    console.log(id)
                     deleteItem(id)
                 }
             },
@@ -60,11 +60,21 @@ function deleteItem(id) {
 
 function editItem() {
     $.ajax({
-        url: "https://localhost:44394/Products/Get",
+        url: "https://localhost:44394/Products/Edit",
         dataType: 'json',
-        type: 'GET',
+        data: $('#editForm').serialize(),
+        type: 'POST',
         success: function (data) {
-            initDataTable(data)
+            alert(data);
+            location.reload();
         }
     })
+}
+
+function fillModal(data) {
+    $('#Id').val(data.Id);
+    $('#Nombre').val(data.Nombre);
+    $('#Marca').val(data.Marca);
+    $('#Precio').val(data.Precio);
+    $('#Descripcion').val(data.Descripcion);
 }
