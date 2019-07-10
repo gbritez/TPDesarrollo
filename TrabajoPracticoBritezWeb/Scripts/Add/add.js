@@ -6,18 +6,23 @@
             dataType: 'json',
             data: $('#productForm').serialize(),
             success: function (data) {
-                alert(data)
-                location.reload();
+                displayModal();
             },
             error: function (data) {
-                alert(data.responseJSON.Message)
             }
         })
     }
     e.preventDefault()
 }
 
+function displayModal() {
+    $('#infoModal').modal('show');
+}
+
 $(document).ready(function () {
+    $('#infoModal').on('hidden.bs.modal', function () {
+        location.reload();
+    })
     //Set Bootstrap classes for validation.
     jQuery.validator.setDefaults({
         errorElement: 'span',

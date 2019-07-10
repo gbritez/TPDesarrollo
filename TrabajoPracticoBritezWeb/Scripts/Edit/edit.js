@@ -1,4 +1,7 @@
 ﻿$(document).ready(function () {
+    $('#infoModal').on('hidden.bs.modal', function () {
+        location.reload();
+    })
     $.ajax({
         url: "https://localhost:44394/Products/Get",
         dataType: 'json',
@@ -50,6 +53,12 @@
 
 });
 
+function displayModal(data) {
+    $('#info').html(data)
+    $('#exampleModal').modal('hide');
+    $('#infoModal').modal('show');
+}
+
 function initDataTable(data) {
     $('#dataTable').DataTable({
         select: true,
@@ -85,31 +94,30 @@ function initDataTable(data) {
     });
 }
 
-function deleteItem(id) {
+function deleteItem(id, e) {
     $.ajax({
         type: 'GET',
         url: "https://localhost:44394/Products/Delete/" + id,
         dataType: 'json',
         data: id,
         success: function (data) {
-            alert(data);
-            location.reload();
+            displayModal(data);
         }
     })
 }
 
 function editItem(e) {
     if ($('#editForm').valid()) {
-    $.ajax({
-        url: "https://localhost:44394/Products/Edit",
-        dataType: 'json',
-        data: $('#editForm').serialize(),
-        type: 'POST',
-        success: function (data) {
-            alert(data);
-            location.reload();
-        }
-    })
+
+        $.ajax({
+            url: "https://localhost:44394/Products/Edit",
+            dataType: 'json',
+            data: $('#editForm').serialize(),
+            type: 'POST',
+            success: function (data) {
+                displayModal(data);
+            }
+        })
     }
     e.preventDefault();
 }

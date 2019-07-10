@@ -7,9 +7,12 @@
             dataType: 'json',
             data: $('#loginForm').serialize(),
             error: function (data) {
-                alert("Usuario o contraseña invalidos.")
+                displayError();
+                
             },
             success: function (data) {
+                debugger;
+               
                 if (data === "admin") {
                     location.href = "HomeAdmin.html"
                 }
@@ -21,6 +24,10 @@
         })
     }
     
+}
+
+function displayError(data) {
+    $('#infoModal').modal('show');
 }
 
 $(document).on('keypress', function (e) {
