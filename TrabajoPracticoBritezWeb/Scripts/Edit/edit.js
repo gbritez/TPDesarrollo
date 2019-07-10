@@ -8,6 +8,46 @@
         }
     })
 
+    //Set Bootstrap classes for validation.
+    jQuery.validator.setDefaults({
+        errorElement: 'span',
+        errorPlacement: function (error, element) {
+            error.addClass('invalid-feedback');
+            element.closest('.form-group').append(error);
+        },
+        highlight: function (element, errorClass, validClass) {
+            $(element).addClass('is-invalid');
+        },
+        unhighlight: function (element, errorClass, validClass) {
+            $(element).removeClass('is-invalid');
+        }
+    });
+
+    $('#editForm').validate({
+        rules: {
+            Nombre: {
+                required: true
+            },
+            Marca: {
+                required: true
+            },
+            Precio: {
+                required: true
+            }
+        },
+        messages: {
+            Nombre: {
+                required: "Ingresar Nombre del producto"
+            },
+            Marca: {
+                required: "Ingresar Marca"
+            },
+            Precio: {
+                required: "Ingresar Precio"
+            }
+        },
+    })
+
 });
 
 function initDataTable(data) {
@@ -58,7 +98,8 @@ function deleteItem(id) {
     })
 }
 
-function editItem() {
+function editItem(e) {
+    if ($('#editForm').valid()) {
     $.ajax({
         url: "https://localhost:44394/Products/Edit",
         dataType: 'json',
@@ -69,6 +110,8 @@ function editItem() {
             location.reload();
         }
     })
+    }
+    e.preventDefault();
 }
 
 function fillModal(data) {

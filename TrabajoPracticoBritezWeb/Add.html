@@ -17,24 +17,30 @@
             <div class="form-group">
                 <div class="col">
                     <label for="Nombre">Nombre</label>
-                    <input type="text" id="Nombre" name="Nombre" class="form-control" required/>
+                    <input type="text" id="Nombre" name="Nombre" class="form-control" required />
                 </div>
+            </div>
+            <div class="form-group">
                 <div class="col">
                     <label>Marca</label>
                     <input type="text" name="Marca" class="form-control" required />
                 </div>
+            </div>
+            <div class="form-group">
                 <div class="col">
                     <label>Precio</label>
                     <input type="number" name="Precio" class="form-control" placeholder="$" required />
                 </div>
-                <div class="col">
-                    <label>Descripción</label>
-                    <textarea name="Descripcion" class="form-control"></textarea>
-                </div>  
             </div>
             <div class="form-group">
                 <div class="col">
-                    <input type="button" class="btn btn-primary" value="Add" onclick="SubmitProduct()" />
+                    <label>Descripción</label>
+                    <textarea name="Descripcion" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col">
+                    <button type="button" class="btn btn-primary" onclick="SubmitProduct(event)">Add</button>
                 </div>
             </div>
         </form>
@@ -42,6 +48,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/jquery.validate.min.js"></script>
     <script src="Scripts/umd/popper.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/Add/add.js"></script>
