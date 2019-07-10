@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TrabajoPracticoBritezAPI.Models
 {
-    public class ProductModel
+    public class ProductModel 
     {
         public int Id { get; set; }
         public string Marca { get; set; }

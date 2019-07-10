@@ -13,38 +13,50 @@
 <body>
     <div class="container">
         <h3>New Product</h3>
-        <form>
-            <div class="form-row">
+        <form id="productForm">
+            <div class="form-group">
                 <div class="col">
                     <label for="Nombre">Nombre</label>
-                    <input type="text" id="Nombre" name="Nombre" class="form-control"  />
+                    <input type="text" id="Nombre" name="Nombre" class="form-control" required/>
                 </div>
                 <div class="col">
                     <label>Marca</label>
-                    <input type="text" name="Marca"  class="form-control"/>
+                    <input type="text" name="Marca" class="form-control" required />
                 </div>
                 <div class="col">
                     <label>Precio</label>
-                    <input type="number" name="Precio"  class="form-control"/>
+                    <input type="number" name="Precio" class="form-control" placeholder="$" required />
                 </div>
-            </div>
-            <div class="form-row">
                 <div class="col">
                     <label>Descripción</label>
-                   <textarea name="Descripcion" class="form-control"></textarea>
-                </div>
+                    <textarea name="Descripcion" class="form-control"></textarea>
+                </div>  
             </div>
-            <div class="form-row">
+            <div class="form-group">
                 <div class="col">
-                    <input type="button" class="btn btn-primary" value="Add" />
+                    <input type="button" class="btn btn-primary" value="Add" onclick="SubmitProduct()" />
                 </div>
             </div>
         </form>
+        <div id="message" class="alert alert-success" style="display:none">Producto agregado con exito!</div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/umd/popper.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function SubmitProduct() {
+            $.ajax({
+                type: 'POST',
+                url: 'https://localhost:44394/Products/Put',
+                dataType: 'json',
+                data: $('#productForm').serialize(),
+                success: function (data) {                  
+                    $('#message').show().delay(3000).fadeOut();
+                }
+            })
+        }
+    </script>
 </body>
 </html>

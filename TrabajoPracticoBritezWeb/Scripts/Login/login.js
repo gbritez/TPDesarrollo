@@ -14,8 +14,7 @@
             }
             else {
                 location.href="HomeUser.html"
-            }
-         
+            }     
         }
 
     })

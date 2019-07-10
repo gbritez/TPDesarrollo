@@ -32,5 +32,41 @@ namespace TrabajoPracticoBritezAPI.Controllers
             }
             return results;
         }
+
+        [HttpPost, Route("Products/Put")]
+        public IHttpActionResult Put(ProductModel product)
+        {
+            productos newProduct = new productos();
+
+            newProduct.nombre = product.Nombre;
+            newProduct.marca = product.Marca;
+            newProduct.precio = product.Precio;
+            newProduct.descripcion = product.Descripcion;
+
+            db.productos.Add(newProduct);
+            db.SaveChanges();
+            return Ok("Exito");
+        }
+
+        [HttpGet, Route("Products/Delete/{id}")]
+        public IHttpActionResult Delete (int id)
+        {
+            productos product = db.productos.Find(id);
+            db.productos.Remove(product);
+            db.SaveChanges();
+            return Ok("Eliminado con éxito");
+        }
+
+        [HttpPost, Route("Products/Edit")]
+        public IHttpActionResult Edit(ProductModel product)
+        {
+            productos productInDB = db.productos.Find(product.Id);
+            productInDB.marca = product.Marca;
+            productInDB.nombre = product.Nombre;
+            productInDB.precio = product.Precio;
+            productInDB.descripcion = product.Descripcion;
+            db.SaveChanges();
+            return Ok("Cambios guardados con éxito");
+        }
     }
 }
